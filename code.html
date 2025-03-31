@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vocabulary Manager & Spaced Repetition</h1>
+
+    <div class="container">
+        <!-- Section for Adding Words -->
+        <section id="add-word-section">
+            <h2>Add New Word</h2>
+            <label for="new-word">Word:</label>
+            <input type="text" id="new-word" required>
+
+            <label for="new-definition">Definition:</label>
+            <textarea id="new-definition" rows="3" required></textarea>
+
+            <button id="add-word-btn">Add Word</button>
+            <p id="add-feedback" class="feedback"></p>
+        </section>
+
+        <!-- Section for Reviewing Words -->
+        <section id="review-section">
+            <h2>Review Time!</h2>
+            <p><span id="due-count">0</span> word(s) due for review.</p>
+            <button id="start-review-btn" disabled>Start Review</button>
+            <div id="review-area" class="hidden">
+                <h3 id="review-word"></h3>
+                <button id="show-definition-btn">Show Definition</button>
+                <p id="review-definition" class="hidden"></p>
+                <div id="review-feedback-buttons" class="hidden">
+                    <p>Did you remember?</p>
+                    <button id="remembered-btn">Yes (Remembered)</button>
+                    <button id="forgot-btn">No (Forgot)</button>
+                </div>
+            </div>
+             <p id="review-completion-message" class="feedback"></p>
+        </section>
+
+        <!-- Section for Listing All Words -->
+        <section id="list-section">
+            <h2>My Vocabulary List (<span id="total-count">0</span>)</h2>
+            <ul id="vocab-list">
+                <!-- Vocabulary items will be added here by JavaScript -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
