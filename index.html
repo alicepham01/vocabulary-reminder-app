@@ -17,9 +17,21 @@
             <input type="text" id="new-word" required>
 
             <label for="new-definition">Definition:</label>
-            <textarea id="new-definition" rows="3" required></textarea>
+            <textarea id="new-definition" rows="2" required></textarea>
 
-            <button id="add-word-btn">Add Word</button>
+            <label for="new-example">Example Sentence:</label>
+            <textarea id="new-example" rows="3"></textarea> <!-- Optional -->
+
+            <label for="new-synonyms">Synonyms (comma-separated):</label>
+            <input type="text" id="new-synonyms"> <!-- Optional -->
+
+            <div class="add-buttons">
+                 <button id="add-word-btn">Add Word</button>
+                 <a href="https://chatgpt.com/g/g-67608fa6a8f881918dff6afa11301df4-vocabulary-coach"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lookup-link button-link">Lookup with Vocab Coach (New Tab)</a>
+            </div>
             <p id="add-feedback" class="feedback"></p>
         </section>
 
@@ -30,10 +42,14 @@
             <button id="start-review-btn" disabled>Start Review</button>
             <div id="review-area" class="hidden">
                 <h3 id="review-word"></h3>
-                <button id="show-definition-btn">Show Definition</button>
-                <p id="review-definition" class="hidden"></p>
+                <button id="show-details-btn">Show Details</button> <!-- Changed from Show Definition -->
+                <div id="review-details" class="hidden"> <!-- Changed ID -->
+                    <p><strong>Definition:</strong> <span id="review-definition"></span></p>
+                    <p><strong>Example:</strong> <span id="review-example"></span></p>
+                    <p><strong>Synonyms:</strong> <span id="review-synonyms"></span></p>
+                </div>
                 <div id="review-feedback-buttons" class="hidden">
-                    <p>Did you remember?</p>
+                    <p>Did you remember the definition?</p> <!-- Clarified prompt -->
                     <button id="remembered-btn">Yes (Remembered)</button>
                     <button id="forgot-btn">No (Forgot)</button>
                 </div>
